@@ -22,6 +22,7 @@ class ForgotPresenter(
             login.isNotEmpty()
         ) {
             if (connection.isHaveNetwork()) {
+                view.onShowProgress(true)
                 val req = ForgotRequest(firstName, lastName, login)
                 repo.forgot(req).observe(view.lifeCycle(),
                     Observer { checkData(it) })
@@ -34,6 +35,6 @@ class ForgotPresenter(
     }
 
     override fun onSuccess(data: ForgotResponse) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        pref.code = data.authCode
     }
 }

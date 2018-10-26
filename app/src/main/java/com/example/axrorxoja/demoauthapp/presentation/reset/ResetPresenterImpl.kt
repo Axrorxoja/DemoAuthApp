@@ -26,6 +26,7 @@ class ResetPresenterImpl(
         ) {
             if (password == passwordAgain) {
                 if (connection.isHaveNetwork()) {
+                    view.onShowProgress(true)
                     val req = ResetPasswordRequest(pref.code, password)
                     repo.reset(req).observe(view.lifeCycle(), Observer { checkData(it) })
                 } else {
@@ -38,9 +39,4 @@ class ResetPresenterImpl(
             view.onFail(R.string.fields_is_empty)
         }
     }
-
-    override fun onSuccess(data: ResetPasswordResponse) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
 }

@@ -29,6 +29,7 @@ class SignUpPresenterImpl(
         ) {
             if (password == passwordAgain) {
                 if (connection.isHaveNetwork()) {
+                    view.onShowProgress(true)
                     val req = SignUpRequest(firstName, lastName, login, password)
                     repo.signUp(req).observe(view.lifeCycle(), Observer { checkData(it) })
                 } else {
@@ -41,9 +42,4 @@ class SignUpPresenterImpl(
             view.onFail(R.string.fields_is_empty)
         }
     }
-
-    override fun onSuccess(data: SignUpResponse) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
 }

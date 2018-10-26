@@ -1,9 +1,16 @@
 package com.example.axrorxoja.demoauthapp.di.module.fragment.reset
 
+import com.example.axrorxoja.demoauthapp.di.scope.forgot.ForgotFragmentScope
 import com.example.axrorxoja.demoauthapp.di.scope.reset.ResetFragmentScope
 import com.example.axrorxoja.demoauthapp.model.repository.ApiService
 import com.example.axrorxoja.demoauthapp.model.repository.reset.IResetRepository
 import com.example.axrorxoja.demoauthapp.model.repository.reset.ResetRepositoryImpl
+import com.example.axrorxoja.demoauthapp.model.storage.IPreference
+import com.example.axrorxoja.demoauthapp.presentation.reset.IPresenterReset
+import com.example.axrorxoja.demoauthapp.presentation.reset.IViewReset
+import com.example.axrorxoja.demoauthapp.presentation.reset.ResetPresenterImpl
+import com.example.axrorxoja.demoauthapp.ui.fragments.ResetFragment
+import com.example.axrorxoja.demoauthapp.widget.connectionManager.IConnectionManager
 import dagger.Module
 import dagger.Provides
 
@@ -17,5 +24,18 @@ class ResetFragmentModule {
     @ResetFragmentScope
     fun provideRepository(service: ApiService): IResetRepository = ResetRepositoryImpl(service)
 
+    @Provides
+    @ForgotFragmentScope
+    fun provideView(fragment: ResetFragment): IViewReset = fragment
+
+    @Provides
+    @ForgotFragmentScope
+    fun providePresenter(
+        repo: IResetRepository,
+        pref: IPreference,
+        view: IViewReset,
+        connection: IConnectionManager
+    ): IPresenterReset =
+        ResetPresenterImpl(repo, connection, view, pref)
 
 }

@@ -23,7 +23,10 @@ abstract class BasePresenter<T>(private val view: IViewBase) {
         }
     }
 
-    abstract fun onSuccess(data: T)
+    open fun onSuccess(data: T) {
+        view.onShowProgress(false)
+        view.onSuccess()
+    }
 
     fun checkData(data: BaseData<T>?) {
         if (data != null) {

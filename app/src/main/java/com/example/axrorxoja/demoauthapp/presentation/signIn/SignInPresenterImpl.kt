@@ -18,6 +18,7 @@ class SignInPresenterImpl(
     override fun signIn(login: String, password: String) {
         if (login.isNotEmpty() && password.isNotEmpty()) {
             if (connection.isHaveNetwork()) {
+                view.onShowProgress(true)
                 val req = SignInRequest(login, password)
                 repo.signIn(req).observe(view.lifeCycle(), Observer { checkData(it) })
             } else {
@@ -27,10 +28,4 @@ class SignInPresenterImpl(
             view.onFail(R.string.fields_is_empty)
         }
     }
-
-    override fun onSuccess(data: SignInResponse) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-
 }
