@@ -1,8 +1,8 @@
 package com.example.axrorxoja.demoauthapp.model.repository
 
+import com.example.axrorxoja.demoauthapp.common.SingleLiveEvent
 import com.example.axrorxoja.demoauthapp.entity.BaseData
 import com.example.axrorxoja.demoauthapp.extension.await
-import com.example.axrorxoja.demoauthapp.widget.SingleLiveEvent
 import kotlinx.coroutines.experimental.Job
 import retrofit2.Call
 import timber.log.Timber

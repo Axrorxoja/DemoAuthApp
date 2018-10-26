@@ -12,9 +12,9 @@ import kotlin.reflect.KProperty
 * used [ReadWriteProperty]
 */
 class IntPreference(
-        private val pref: SharedPreferences,
-        private val key: String,
-        private val defValue: Int = -1
+    private val pref: SharedPreferences,
+    private val key: String,
+    private val defValue: Int = -1
 ) : ReadWriteProperty<Any, Int> {
     override fun getValue(thisRef: Any, property: KProperty<*>) = pref.getInt(key, defValue)
     override fun setValue(thisRef: Any, property: KProperty<*>, value: Int) = pref.edit { putInt(key, value) }

@@ -4,6 +4,8 @@ import android.content.Context
 import android.net.ConnectivityManager
 import com.example.axrorxoja.demoauthapp.App
 import com.example.axrorxoja.demoauthapp.di.scope.AppScope
+import com.example.axrorxoja.demoauthapp.model.storage.IPreference
+import com.example.axrorxoja.demoauthapp.model.storage.PreferenceImpl
 import dagger.Module
 import dagger.Provides
 
@@ -18,9 +20,9 @@ class AppModule {
         return application.applicationContext
     }
 
-    /* @AppScope
-     @Provides
-     fun providesPreferenceStorage(context: Context): IPreference = PreferenceImpl(context)*/
+    @AppScope
+    @Provides
+    fun providesPreferenceStorage(context: Context): IPreference = PreferenceImpl(context)
 
 
     @AppScope

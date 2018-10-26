@@ -33,14 +33,14 @@ class NetModule {
             .build()
     }
 
-     @AppScope
-     @Provides
-     fun provideApiService(moshi: Moshi, client: OkHttpClient): ApiService {
-         val retrofit = Retrofit.Builder()
-                 .baseUrl(API_URL)
-                 .client(client)
-                 .addConverterFactory(MoshiConverterFactory.create(moshi))
-                 .build()
-         return retrofit.create(ApiService::class.java)
-     }
+    @AppScope
+    @Provides
+    fun provideApiService(moshi: Moshi, client: OkHttpClient): ApiService {
+        val retrofit = Retrofit.Builder()
+            .baseUrl(API_URL)
+            .client(client)
+            .addConverterFactory(MoshiConverterFactory.create(moshi))
+            .build()
+        return retrofit.create(ApiService::class.java)
+    }
 }

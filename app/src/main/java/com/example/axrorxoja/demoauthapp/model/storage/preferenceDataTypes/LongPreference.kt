@@ -12,9 +12,9 @@ import kotlin.reflect.KProperty
 * used [ReadWriteProperty]
 */
 class LongPreference(
-        private val pref: SharedPreferences,
-        private val key: String,
-        private val defValue: Long = 0L
+    private val pref: SharedPreferences,
+    private val key: String,
+    private val defValue: Long = 0L
 ) : ReadWriteProperty<Any, Long> {
     override fun getValue(thisRef: Any, property: KProperty<*>) = pref.getLong(key, defValue)
     override fun setValue(thisRef: Any, property: KProperty<*>, value: Long) = pref.edit { putLong(key, value) }

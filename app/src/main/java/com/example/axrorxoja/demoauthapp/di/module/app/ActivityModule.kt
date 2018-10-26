@@ -13,8 +13,10 @@ import dagger.multibindings.IntoMap
 * Created by axrorxoja on 9/26/18
 */
 
-@Module(subcomponents = [
-    AppActivitySubComponent::class])
+@Module(
+    subcomponents = [
+        AppActivitySubComponent::class]
+)
 abstract class ActivityModule {
     @Binds
     @IntoMap
