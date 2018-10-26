@@ -1,12 +1,17 @@
-package com.example.axrorxoja.demoauthapp
+package com.example.axrorxoja.demoauthapp.ui
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
+import com.example.axrorxoja.demoauthapp.R
 
 class AppActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_app)
+
+        if (savedInstanceState != null) {
+
+        }
     }
 }

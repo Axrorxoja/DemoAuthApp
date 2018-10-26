@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">DemoAuthApp</string>
+
+    <string name="login">Login</string>
+    <string name="password">password</string>
+    <string name="sign_up">SignUp</string>
+    <string name="forgot">Forgot</string>
+    <string name="enter">Enter</string>
+    <string name="save">Save</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="password_again">Password again</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello">Hello</string>
+    <string name="retry">retry</string>
 </resources>
