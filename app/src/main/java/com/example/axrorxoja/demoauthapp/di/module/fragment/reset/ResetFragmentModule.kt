@@ -1,7 +1,7 @@
 package com.example.axrorxoja.demoauthapp.di.module.fragment.reset
 
 import com.example.axrorxoja.demoauthapp.di.scope.reset.ResetFragmentScope
-import com.example.axrorxoja.demoauthapp.model.repository.global.ApiService
+import com.example.axrorxoja.demoauthapp.model.repository.ApiService
 import com.example.axrorxoja.demoauthapp.model.repository.reset.IResetRepository
 import com.example.axrorxoja.demoauthapp.model.repository.reset.ResetRepositoryImpl
 import dagger.Module

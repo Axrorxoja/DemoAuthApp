@@ -3,7 +3,7 @@ package com.example.axrorxoja.demoauthapp.di.module.app
 import com.example.axrorxoja.demoauthapp.App
 import com.example.axrorxoja.demoauthapp.common.API_URL
 import com.example.axrorxoja.demoauthapp.di.scope.AppScope
-import com.example.axrorxoja.demoauthapp.model.repository.global.ApiService
+import com.example.axrorxoja.demoauthapp.model.repository.ApiService
 import com.readystatesoftware.chuck.ChuckInterceptor
 import com.squareup.moshi.Moshi
 import dagger.Module

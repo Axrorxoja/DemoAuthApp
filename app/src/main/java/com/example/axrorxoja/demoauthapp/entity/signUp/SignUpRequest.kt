@@ -1,6 +1,6 @@
 package com.example.axrorxoja.demoauthapp.entity.signUp
 
-import com.example.axrorxoja.demoauthapp.entity.global.BaseRequest
+import com.example.axrorxoja.demoauthapp.entity.BaseRequest
 
 class SignUpRequest(
     login: String = "",

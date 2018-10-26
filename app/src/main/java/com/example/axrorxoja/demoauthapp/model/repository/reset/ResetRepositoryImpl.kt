@@ -1,12 +1,12 @@
 package com.example.axrorxoja.demoauthapp.model.repository.reset
 
 import android.arch.lifecycle.LiveData
-import com.example.axrorxoja.demoauthapp.common.SingleLiveEvent
 import com.example.axrorxoja.demoauthapp.entity.BaseData
 import com.example.axrorxoja.demoauthapp.entity.reset.ResetPasswordRequest
 import com.example.axrorxoja.demoauthapp.entity.reset.ResetPasswordResponse
+import com.example.axrorxoja.demoauthapp.model.repository.ApiService
 import com.example.axrorxoja.demoauthapp.model.repository.BaseRepositoryImpl
-import com.example.axrorxoja.demoauthapp.model.repository.global.ApiService
+import com.example.axrorxoja.demoauthapp.widget.SingleLiveEvent
 import kotlinx.coroutines.experimental.GlobalScope
 import kotlinx.coroutines.experimental.Job
 import kotlinx.coroutines.experimental.launch

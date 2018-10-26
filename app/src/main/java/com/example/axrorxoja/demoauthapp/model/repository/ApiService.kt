@@ -1,4 +1,4 @@
-package com.example.axrorxoja.demoauthapp.model.repository.global
+package com.example.axrorxoja.demoauthapp.model.repository
 
 import com.example.axrorxoja.demoauthapp.entity.forgot.ForgotRequest
 import com.example.axrorxoja.demoauthapp.entity.forgot.ForgotResponse

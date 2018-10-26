@@ -1,4 +1,4 @@
-package com.example.axrorxoja.demoauthapp.common
+package com.example.axrorxoja.demoauthapp.widget
 
 import android.arch.lifecycle.LifecycleOwner
 import android.arch.lifecycle.MutableLiveData

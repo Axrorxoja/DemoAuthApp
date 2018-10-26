@@ -6,6 +6,8 @@ import com.example.axrorxoja.demoauthapp.App
 import com.example.axrorxoja.demoauthapp.di.scope.AppScope
 import com.example.axrorxoja.demoauthapp.model.storage.IPreference
 import com.example.axrorxoja.demoauthapp.model.storage.PreferenceImpl
+import com.example.axrorxoja.demoauthapp.widget.connectionManager.ConnectionManagerImpl
+import com.example.axrorxoja.demoauthapp.widget.connectionManager.IConnectionManager
 import dagger.Module
 import dagger.Provides
 
@@ -27,6 +29,10 @@ class AppModule {
 
     @AppScope
     @Provides
-    fun provideConnectionService(context: Context) =
-        context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+    fun provideConnectionService(context: Context): IConnectionManager {
+        val it = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        return ConnectionManagerImpl(it)
+
+    }
+
 }

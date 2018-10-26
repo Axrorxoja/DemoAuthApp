@@ -1,9 +1,9 @@
 package com.example.axrorxoja.demoauthapp.di.module.fragment.forgot
 
 import com.example.axrorxoja.demoauthapp.di.scope.forgot.ForgotFragmentScope
+import com.example.axrorxoja.demoauthapp.model.repository.ApiService
 import com.example.axrorxoja.demoauthapp.model.repository.forgot.ForgotRepositoryImpl
 import com.example.axrorxoja.demoauthapp.model.repository.forgot.IForgotRepository
-import com.example.axrorxoja.demoauthapp.model.repository.global.ApiService
 import dagger.Module
 import dagger.Provides
 

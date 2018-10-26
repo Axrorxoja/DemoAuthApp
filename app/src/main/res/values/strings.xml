@@ -11,8 +11,16 @@
     <string name="last_name">Last Name</string>
     <string name="password_again">Password again</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hello">Hello</string>
     <string name="retry">retry</string>
+    <string name="network_not_available">Network not available</string>
+    <string name="fields_is_empty">Fields is empty</string>
+    <string name="data_is_empty">data is empty</string>
+    <string name="pass_or_login_inc">password or login incorrect</string>
+    <string name="validation_error">validation error</string>
+    <string name="user_with_such_login_exist">user with such a login exists</string>
+    <string name="user_not_found">user not found</string>
+    <string name="user_with_such_auth_code_not_found">user with such auth code not found</string>
+    <string name="un_known_error">Unknown error</string>
+    <string name="password_dont_match">Passwords don\'t match</string>
 </resources>

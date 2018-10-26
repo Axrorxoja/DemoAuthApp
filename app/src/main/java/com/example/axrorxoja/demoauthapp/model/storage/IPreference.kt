@@ -6,6 +6,7 @@ package com.example.axrorxoja.demoauthapp.model.storage
 */
 interface IPreference {
     var isFirstLaunch: Boolean
+    var code: Int
 
 
 }

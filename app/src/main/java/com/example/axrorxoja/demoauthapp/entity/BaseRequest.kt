@@ -1,4 +1,4 @@
-package com.example.axrorxoja.demoauthapp.entity.global
+package com.example.axrorxoja.demoauthapp.entity
 
 abstract class BaseRequest(
     val login: String = "",
