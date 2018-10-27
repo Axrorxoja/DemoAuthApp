@@ -28,8 +28,8 @@ class SignUpFragment : BaseDaggerFragment(),
     private fun onSaveUser() {
         btn_save.isEnabled = false
         presenter.signUp(
-            ti_first_name.text.toString(),
-            ti_last_name.text.toString(),
+            ti_first_name.text(),
+            ti_last_name.text(),
             ti_login.text(),
             ti_pass.text(),
             ti_pass_again.text()

@@ -15,7 +15,7 @@
     </style>
 
     <style name="AppTheme.EditText_Number_Next" parent="AppTheme.Base_EditTextWithNextActionStyle">
-        <item name="android:inputType">number</item>
+        <item name="android:inputType">numberPassword</item>
         <item name="android:imeOptions">actionNext</item>
     </style>
 
@@ -30,7 +30,7 @@
     </style>
 
     <style name="AppTheme.EditText_Number_Done" parent="AppTheme.Base_EditTextWithNextActionStyle">
-        <item name="android:inputType">number</item>
+        <item name="android:inputType">numberPassword</item>
         <item name="android:imeOptions">actionDone</item>
     </style>
 
