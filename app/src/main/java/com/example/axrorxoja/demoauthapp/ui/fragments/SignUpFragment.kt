@@ -2,25 +2,46 @@ package com.example.axrorxoja.demoauthapp.ui.fragments
 
 
 import android.arch.lifecycle.LifecycleOwner
+import android.os.Bundle
+import android.support.design.widget.Snackbar
+import android.view.View
 import com.example.axrorxoja.demoauthapp.R
+import com.example.axrorxoja.demoauthapp.extension.changeVisibility
+import com.example.axrorxoja.demoauthapp.extension.showSnackbar
+import com.example.axrorxoja.demoauthapp.extension.text
+import com.example.axrorxoja.demoauthapp.presentation.IViewActivity
+import com.example.axrorxoja.demoauthapp.presentation.signUp.IPresenterSignUp
 import com.example.axrorxoja.demoauthapp.presentation.signUp.IViewSignUp
-import com.example.axrorxoja.demoauthapp.ui.global.BaseFragment
+import com.example.axrorxoja.demoauthapp.ui.global.BaseDaggerFragment
+import kotlinx.android.synthetic.main.fragment_sign_up.*
+import javax.inject.Inject
 
-class SignUpFragment : BaseFragment(),
+class SignUpFragment : BaseDaggerFragment(),
     IViewSignUp {
     override val layoutRes: Int = R.layout.fragment_sign_up
+    @Inject lateinit var presenter: IPresenterSignUp
+    @Inject lateinit var activityView: IViewActivity
 
-    override fun onSuccess() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        btn_save.setOnClickListener { onSaveUser() }
     }
 
-    override fun onFail(stringRes: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    private fun onSaveUser() {
+        presenter.signUp(
+            ti_first_name.text(),
+            ti_last_name.text(),
+            ti_login.text(),
+            ti_pass.text(),
+            ti_pass_again.text()
+        )
     }
 
-    override fun onShowProgress(isShow: Boolean) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+    override fun onSuccess() = activityView.exit()
 
-    override fun lifeCycle(): LifecycleOwner =this
+    override fun onFail(stringRes: Int) = parent.showSnackbar(stringRes, Snackbar.LENGTH_SHORT)
+
+    override fun onShowProgress(isShow: Boolean) = pb.changeVisibility(isShow)
+
+    override fun lifeCycle(): LifecycleOwner = this
 }

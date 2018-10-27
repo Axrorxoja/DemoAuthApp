@@ -1,4 +1,4 @@
-package com.example.axrorxoja.demoauthapp.presentation
+package com.example.axrorxoja.demoauthapp.presentation.global
 
 import android.arch.lifecycle.LifecycleOwner
 import android.support.annotation.StringRes

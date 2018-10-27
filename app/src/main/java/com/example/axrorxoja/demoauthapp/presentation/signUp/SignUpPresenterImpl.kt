@@ -5,7 +5,7 @@ import com.example.axrorxoja.demoauthapp.R
 import com.example.axrorxoja.demoauthapp.entity.signUp.SignUpRequest
 import com.example.axrorxoja.demoauthapp.entity.signUp.SignUpResponse
 import com.example.axrorxoja.demoauthapp.model.repository.signUp.ISignUpRepository
-import com.example.axrorxoja.demoauthapp.presentation.BasePresenter
+import com.example.axrorxoja.demoauthapp.presentation.global.BasePresenter
 import com.example.axrorxoja.demoauthapp.widget.connectionManager.IConnectionManager
 
 class SignUpPresenterImpl(

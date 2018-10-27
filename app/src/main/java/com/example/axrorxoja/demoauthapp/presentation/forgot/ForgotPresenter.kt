@@ -6,7 +6,7 @@ import com.example.axrorxoja.demoauthapp.entity.forgot.ForgotRequest
 import com.example.axrorxoja.demoauthapp.entity.forgot.ForgotResponse
 import com.example.axrorxoja.demoauthapp.model.repository.forgot.IForgotRepository
 import com.example.axrorxoja.demoauthapp.model.storage.IPreference
-import com.example.axrorxoja.demoauthapp.presentation.BasePresenter
+import com.example.axrorxoja.demoauthapp.presentation.global.BasePresenter
 import com.example.axrorxoja.demoauthapp.widget.connectionManager.IConnectionManager
 
 class ForgotPresenter(

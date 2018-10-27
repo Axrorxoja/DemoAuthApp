@@ -5,7 +5,7 @@ import com.example.axrorxoja.demoauthapp.R
 import com.example.axrorxoja.demoauthapp.entity.signIn.SignInRequest
 import com.example.axrorxoja.demoauthapp.entity.signIn.SignInResponse
 import com.example.axrorxoja.demoauthapp.model.repository.signIn.ISignInRepository
-import com.example.axrorxoja.demoauthapp.presentation.BasePresenter
+import com.example.axrorxoja.demoauthapp.presentation.global.BasePresenter
 import com.example.axrorxoja.demoauthapp.widget.connectionManager.IConnectionManager
 
 class SignInPresenterImpl(

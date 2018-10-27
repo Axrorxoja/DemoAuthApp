@@ -3,19 +3,17 @@ package com.example.axrorxoja.demoauthapp.extension
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.content.Context
-import android.graphics.drawable.Drawable
 import android.support.annotation.LayoutRes
 import android.support.annotation.StringRes
 import android.support.design.widget.Snackbar
+import android.support.design.widget.TextInputEditText
 import android.support.v4.content.ContextCompat
-import android.support.v4.graphics.drawable.DrawableCompat
 import android.support.v4.view.animation.FastOutLinearInInterpolator
 import android.support.v4.view.animation.LinearOutSlowInInterpolator
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
-import android.widget.ImageView
 import android.widget.Toast
 import com.example.axrorxoja.demoauthapp.R
 
@@ -23,18 +21,6 @@ import com.example.axrorxoja.demoauthapp.R
 * Created by axrorxoja on 9/27/18
 */
 
-fun ImageView.tint(colorRes: Int) = this.setColorFilter(this.context.color(colorRes))
-
-fun Context.color(colorRes: Int) = ContextCompat.getColor(this, colorRes)
-
-fun Context.getTintDrawable(
-    drawableRes: Int,
-    colorRes: Int
-): Drawable {
-    val wrapDrawable = DrawableCompat.wrap(ContextCompat.getDrawable(this, drawableRes)!!).mutate()
-    DrawableCompat.setTint(wrapDrawable, color(colorRes))
-    return wrapDrawable
-}
 
 fun ViewGroup.inflate(
     inflater: LayoutInflater,
@@ -62,8 +48,8 @@ fun View.showKeyboard() {
     imm.showSoftInput(this, 0)
 }
 
-fun View.showView() {
-    visibility = View.VISIBLE
+fun View.changeVisibility(isVisible: Boolean) {
+    visibility = if (isVisible) View.VISIBLE else View.INVISIBLE
 }
 
 fun View.hideView() {
@@ -118,3 +104,5 @@ fun View.show() {
             }
         })
 }
+
+fun TextInputEditText.text(): String = text.toString()

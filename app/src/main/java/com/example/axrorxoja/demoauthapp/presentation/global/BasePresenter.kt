@@ -1,4 +1,4 @@
-package com.example.axrorxoja.demoauthapp.presentation
+package com.example.axrorxoja.demoauthapp.presentation.global
 
 import com.example.axrorxoja.demoauthapp.R
 import com.example.axrorxoja.demoauthapp.common.ErrorCodes

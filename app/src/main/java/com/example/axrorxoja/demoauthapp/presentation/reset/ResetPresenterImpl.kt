@@ -6,7 +6,7 @@ import com.example.axrorxoja.demoauthapp.entity.reset.ResetPasswordRequest
 import com.example.axrorxoja.demoauthapp.entity.reset.ResetPasswordResponse
 import com.example.axrorxoja.demoauthapp.model.repository.reset.IResetRepository
 import com.example.axrorxoja.demoauthapp.model.storage.IPreference
-import com.example.axrorxoja.demoauthapp.presentation.BasePresenter
+import com.example.axrorxoja.demoauthapp.presentation.global.BasePresenter
 import com.example.axrorxoja.demoauthapp.widget.connectionManager.IConnectionManager
 
 class ResetPresenterImpl(
