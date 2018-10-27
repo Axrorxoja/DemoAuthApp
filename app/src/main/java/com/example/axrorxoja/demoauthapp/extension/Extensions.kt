@@ -15,13 +15,12 @@ inline fun FragmentManager.transAction(
     transaction.commit()
 }
 
-inline fun SharedPreferences.edit(preferApply: Boolean = false, f: SharedPreferences.Editor.() -> Unit) {
+inline fun SharedPreferences.edit(f: SharedPreferences.Editor.() -> Unit) {
     val editor = edit()
     editor.f()
-    if (preferApply) editor.apply() else editor.commit()
+    editor.apply()
 }
 
-fun <T> lazyFast(operation: () -> T): Lazy<T> = lazy(LazyThreadSafetyMode.NONE) { operation() }
 
 
 

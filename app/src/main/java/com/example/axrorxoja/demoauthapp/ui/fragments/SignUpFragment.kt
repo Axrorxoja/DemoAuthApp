@@ -1,9 +1,7 @@
 package com.example.axrorxoja.demoauthapp.ui.fragments
 
-
 import android.arch.lifecycle.LifecycleOwner
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.view.View
 import com.example.axrorxoja.demoauthapp.R
 import com.example.axrorxoja.demoauthapp.extension.changeVisibility
@@ -28,6 +26,7 @@ class SignUpFragment : BaseDaggerFragment(),
     }
 
     private fun onSaveUser() {
+        btn_save.isEnabled = false
         presenter.signUp(
             ti_first_name.text.toString(),
             ti_last_name.text.toString(),
@@ -39,7 +38,11 @@ class SignUpFragment : BaseDaggerFragment(),
 
     override fun onSuccess() = activityView.exit()
 
-    override fun onFail(stringRes: Int) = parent.showSnackbar(stringRes, Snackbar.LENGTH_SHORT)
+    override fun onFail(stringRes: Int) {
+        onShowProgress(false)
+        btn_save.isEnabled = true
+        parent.showSnackbar(stringRes)
+    }
 
     override fun onShowProgress(isShow: Boolean) = pb.changeVisibility(isShow)
 

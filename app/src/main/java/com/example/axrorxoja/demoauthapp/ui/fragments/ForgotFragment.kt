@@ -28,6 +28,7 @@ class ForgotFragment : BaseDaggerFragment(),
     }
 
     private fun onForgot() {
+        btn_forgot.isEnabled = false
         presenter.forgot(
             ti_first_name.text(),
             ti_last_name.text(),
@@ -37,7 +38,11 @@ class ForgotFragment : BaseDaggerFragment(),
 
     override fun onSuccess() = activityView.onReset()
 
-    override fun onFail(stringRes: Int) = parent.showSnackbar(stringRes, Snackbar.LENGTH_SHORT)
+    override fun onFail(stringRes: Int) {
+        onShowProgress(false)
+        btn_forgot.isEnabled = true
+        parent.showSnackbar(stringRes)
+    }
 
     override fun onShowProgress(isShow: Boolean) = pb.changeVisibility(isShow)
 

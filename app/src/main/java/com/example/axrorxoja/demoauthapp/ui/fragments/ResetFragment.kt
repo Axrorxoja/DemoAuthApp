@@ -24,12 +24,21 @@ class ResetFragment : BaseDaggerFragment(),
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        btn_reset.setOnClickListener { presenter.reset(ti_pass.text(), ti_pass_again.text()) }
+        btn_reset.setOnClickListener { onReset() }
+    }
+
+    private fun onReset() {
+        btn_reset.isEnabled = false
+        presenter.reset(ti_pass.text(), ti_pass_again.text())
     }
 
     override fun onSuccess() = activityView.exitToRoot()
 
-    override fun onFail(stringRes: Int) = parent.showSnackbar(stringRes, Snackbar.LENGTH_SHORT)
+    override fun onFail(stringRes: Int) {
+        onShowProgress(false)
+        btn_reset.isEnabled = true
+        parent.showSnackbar(stringRes)
+    }
 
     override fun onShowProgress(isShow: Boolean) = pb.changeVisibility(isHidden)
 
