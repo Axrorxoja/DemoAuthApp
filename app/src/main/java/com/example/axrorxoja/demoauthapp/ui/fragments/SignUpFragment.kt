@@ -36,11 +36,13 @@ class SignUpFragment : BaseDaggerFragment(),
         )
     }
 
-    override fun onSuccess() = activityView.exit()
+    override fun onSuccess() {
+        activityView.exit()
+        btn_save.isEnabled = true
+    }
 
     override fun onFail(stringRes: Int) {
         onShowProgress(false)
-        btn_save.isEnabled = true
         parent.showSnackbar(stringRes)
     }
 

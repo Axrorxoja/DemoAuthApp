@@ -35,7 +35,10 @@ class SignInFragment : BaseDaggerFragment(),
         presenter.signIn(tie_login.text(), tie_password.text())
     }
 
-    override fun onSuccess() = activityView.onMain()
+    override fun onSuccess() {
+        activityView.onMain()
+        btn_enter.isEnabled = true
+    }
 
     override fun onFail(stringRes: Int) {
         onShowProgress(false)

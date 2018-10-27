@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 
 abstract class BaseFragment : Fragment() {
-    val fragmentTag = javaClass.name
+    val fragmentTag: String = this::class.java.name
 
     abstract val layoutRes: Int
     override fun onCreateView(

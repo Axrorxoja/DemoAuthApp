@@ -3,7 +3,6 @@ package com.example.axrorxoja.demoauthapp.ui.fragments
 
 import android.arch.lifecycle.LifecycleOwner
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.view.View
 import com.example.axrorxoja.demoauthapp.R
 import com.example.axrorxoja.demoauthapp.extension.changeVisibility
@@ -36,7 +35,10 @@ class ForgotFragment : BaseDaggerFragment(),
         )
     }
 
-    override fun onSuccess() = activityView.onReset()
+    override fun onSuccess() {
+        activityView.onReset()
+        btn_forgot.isEnabled = true
+    }
 
     override fun onFail(stringRes: Int) {
         onShowProgress(false)

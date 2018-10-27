@@ -32,7 +32,10 @@ class ResetFragment : BaseDaggerFragment(),
         presenter.reset(ti_pass.text(), ti_pass_again.text())
     }
 
-    override fun onSuccess() = activityView.exitToRoot()
+    override fun onSuccess() {
+        activityView.exitToRoot()
+        btn_reset.isEnabled = true
+    }
 
     override fun onFail(stringRes: Int) {
         onShowProgress(false)
@@ -40,7 +43,7 @@ class ResetFragment : BaseDaggerFragment(),
         parent.showSnackbar(stringRes)
     }
 
-    override fun onShowProgress(isShow: Boolean) = pb.changeVisibility(isHidden)
+    override fun onShowProgress(isShow: Boolean) = pb.changeVisibility(isShow)
 
     override fun lifeCycle(): LifecycleOwner = this
 }

@@ -1,7 +1,6 @@
 package com.example.axrorxoja.demoauthapp.ui
 
 import android.os.Bundle
-import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentTransaction
 import com.example.axrorxoja.demoauthapp.R
 import com.example.axrorxoja.demoauthapp.extension.transAction
@@ -31,20 +30,30 @@ class AppActivity :
 
     override fun onForgot() = supportFragmentManager.transAction({ add(this, ForgotFragment()) })
 
-    override fun exitToRoot() =
-        supportFragmentManager.popBackStack(
+    override fun exitToRoot() {
+        /*supportFragmentManager.popBackStackImmediate(
             SignInFragment::class.java.name,
-            FragmentManager.POP_BACK_STACK_INCLUSIVE
-        )
+            0
+        )*/
+        supportFragmentManager.popBackStack()
+        supportFragmentManager.popBackStack()
+    }
+
 
     override fun exit() = supportFragmentManager.popBackStack()
 
-    private fun add(ft: FragmentTransaction, fr: BaseFragment) = ft.add(R.id.container, fr, fr.fragmentTag)
+    private fun add(ft: FragmentTransaction, fr: BaseFragment) {
+        ft.add(R.id.container, fr)
+            .addToBackStack(fr.fragmentTag)
+    }
 
-    private fun replace(ft: FragmentTransaction, fr: BaseFragment) = ft.add(R.id.container, fr, fr.fragmentTag)
+
+    private fun replace(ft: FragmentTransaction, fr: BaseFragment) =
+        ft.replace(R.id.container, fr)
+            .addToBackStack(fr.fragmentTag)
 
     override fun onBackPressed() {
-        if (supportFragmentManager.backStackEntryCount == 1) {
+        if (supportFragmentManager.backStackEntryCount == 2) {
             finish()
         } else {
             super.onBackPressed()
