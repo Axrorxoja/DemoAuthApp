@@ -10,18 +10,20 @@ import timber.log.Timber
 /*
 * Created by axrorxoja on 10/2/18
 */
-abstract class BaseRepositoryImpl<T> : IBaseRepository {
-    abstract var job: Job?
-    abstract val liveData: SingleLiveEvent<T>
+abstract class BaseRepositoryImpl<T> :
+    IBaseRepository {
 
-    protected suspend fun <T> parseData(call: Call<T>): BaseData<T> {
+    abstract var job: Job?
+    abstract val liveData: SingleLiveEvent<BaseData<T>>
+
+    protected suspend fun parseData(call: Call<BaseData<T>>): BaseData<T> {
         return try {
             val res = call.await()
             Timber.d("$res")
-            BaseData(res)
+            return res
         } catch (e: Exception) {
             e.printStackTrace()
-            BaseData(null, null)
+            BaseData()
         }
     }
 

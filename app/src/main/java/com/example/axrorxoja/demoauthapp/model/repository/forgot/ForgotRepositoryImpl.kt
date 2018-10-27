@@ -12,10 +12,11 @@ import kotlinx.coroutines.experimental.Job
 import kotlinx.coroutines.experimental.launch
 
 class ForgotRepositoryImpl(private val service: ApiService) :
-    BaseRepositoryImpl<BaseData<ForgotResponse>>(), IForgotRepository {
+    BaseRepositoryImpl<ForgotResponse>(),
+    IForgotRepository {
 
     override var job: Job? = null
-    override val liveData: SingleLiveEvent<BaseData<ForgotResponse>> by lazy { SingleLiveEvent<BaseData<ForgotResponse>>() }
+    override val liveData by lazy { SingleLiveEvent<BaseData<ForgotResponse>>() }
 
     override fun forgot(request: ForgotRequest): LiveData<BaseData<ForgotResponse>> {
         job = GlobalScope.launch {

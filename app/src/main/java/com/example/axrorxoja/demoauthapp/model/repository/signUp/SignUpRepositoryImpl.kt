@@ -16,9 +16,9 @@ import kotlinx.coroutines.experimental.launch
 * Created by axrorxoja on 10/2/18
 */
 class SignUpRepositoryImpl(private val service: ApiService) :
-    BaseRepositoryImpl<BaseData<SignUpResponse>>(),
+    BaseRepositoryImpl<SignUpResponse>(),
     ISignUpRepository {
-    override val liveData: SingleLiveEvent<BaseData<SignUpResponse>> by lazy { SingleLiveEvent<BaseData<SignUpResponse>>() }
+    override val liveData by lazy { SingleLiveEvent<BaseData<SignUpResponse>>() }
     override var job: Job? = null
 
     override fun signUp(request: SignUpRequest): LiveData<BaseData<SignUpResponse>> {

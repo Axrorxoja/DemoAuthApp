@@ -1,5 +1,6 @@
 package com.example.axrorxoja.demoauthapp.model.repository
 
+import com.example.axrorxoja.demoauthapp.entity.BaseData
 import com.example.axrorxoja.demoauthapp.entity.forgot.ForgotRequest
 import com.example.axrorxoja.demoauthapp.entity.forgot.ForgotResponse
 import com.example.axrorxoja.demoauthapp.entity.reset.ResetPasswordRequest
@@ -19,16 +20,16 @@ import retrofit2.http.POST
 interface ApiService {
 
     @POST("sign_in")
-    fun signIn(@Body user: SignInRequest): Call<SignInResponse>
+    fun signIn(@Body user: SignInRequest): Call<BaseData<SignInResponse>>
 
     @POST("sign_up")
-    fun signUp(@Body user: SignUpRequest): Call<SignUpResponse>
+    fun signUp(@Body user: SignUpRequest): Call<BaseData<SignUpResponse>>
 
     @POST("forgot")
-    fun forgot(@Body user: ForgotRequest): Call<ForgotResponse>
+    fun forgot(@Body user: ForgotRequest): Call<BaseData<ForgotResponse>>
 
     @POST("reset")
-    fun reset(@Body user: ResetPasswordRequest): Call<ResetPasswordResponse>
+    fun reset(@Body user: ResetPasswordRequest): Call<BaseData<ResetPasswordResponse>>
 
 
 }

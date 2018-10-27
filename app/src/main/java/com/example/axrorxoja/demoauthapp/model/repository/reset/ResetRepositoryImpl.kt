@@ -12,11 +12,11 @@ import kotlinx.coroutines.experimental.Job
 import kotlinx.coroutines.experimental.launch
 
 class ResetRepositoryImpl(private val service: ApiService) :
-    BaseRepositoryImpl<BaseData<ResetPasswordResponse>>(),
+    BaseRepositoryImpl<ResetPasswordResponse>(),
     IResetRepository {
 
     override var job: Job? = null
-    override val liveData: SingleLiveEvent<BaseData<ResetPasswordResponse>> by lazy { SingleLiveEvent<BaseData<ResetPasswordResponse>>() }
+    override val liveData by lazy { SingleLiveEvent<BaseData<ResetPasswordResponse>>() }
 
     override fun reset(request: ResetPasswordRequest): LiveData<BaseData<ResetPasswordResponse>> {
         job = GlobalScope.launch {

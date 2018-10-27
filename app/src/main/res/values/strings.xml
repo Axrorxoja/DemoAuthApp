@@ -2,7 +2,7 @@
     <string name="app_name">DemoAuthApp</string>
 
     <string name="login">Login</string>
-    <string name="password">password</string>
+    <string name="password">Password</string>
     <string name="sign_up">SignUp</string>
     <string name="forgot">Forgot</string>
     <string name="enter">Enter</string>

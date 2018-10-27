@@ -1,6 +1,5 @@
 package com.example.axrorxoja.demoauthapp.di.module.fragment.signIn
 
-import com.example.axrorxoja.demoauthapp.di.scope.forgot.ForgotFragmentScope
 import com.example.axrorxoja.demoauthapp.di.scope.signIn.SignInFragmentScope
 import com.example.axrorxoja.demoauthapp.model.repository.ApiService
 import com.example.axrorxoja.demoauthapp.model.repository.signIn.ISignInRepository
@@ -24,11 +23,11 @@ class SignInFragmentModule {
     fun provideRepository(service: ApiService): ISignInRepository = SignInRepositoryImpl(service)
 
     @Provides
-    @ForgotFragmentScope
+    @SignInFragmentScope
     fun provideView(fragment: SignInFragment): IViewSignIn = fragment
 
     @Provides
-    @ForgotFragmentScope
+    @SignInFragmentScope
     fun providePresenter(
         repo: ISignInRepository,
         view: IViewSignIn,

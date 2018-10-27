@@ -8,4 +8,30 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="AppTheme.Base_EditTextWithNextActionStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="AppTheme.EditText_Number_Next" parent="AppTheme.Base_EditTextWithNextActionStyle">
+        <item name="android:inputType">number</item>
+        <item name="android:imeOptions">actionNext</item>
+    </style>
+
+    <style name="AppTheme.EditText_Name_Next" parent="AppTheme.Base_EditTextWithNextActionStyle">
+        <item name="android:inputType">textPersonName</item>
+        <item name="android:imeOptions">actionNext</item>
+    </style>
+
+    <style name="AppTheme.EditText_Name_Done" parent="AppTheme.Base_EditTextWithNextActionStyle">
+        <item name="android:inputType">textPersonName</item>
+        <item name="android:imeOptions">actionDone</item>
+    </style>
+
+    <style name="AppTheme.EditText_Number_Done" parent="AppTheme.Base_EditTextWithNextActionStyle">
+        <item name="android:inputType">number</item>
+        <item name="android:imeOptions">actionDone</item>
+    </style>
+
 </resources>

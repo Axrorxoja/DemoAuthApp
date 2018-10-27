@@ -35,6 +35,7 @@ class ForgotPresenter(
     }
 
     override fun onSuccess(data: ForgotResponse) {
+        super.onSuccess(data)
         pref.code = data.authCode
     }
 }

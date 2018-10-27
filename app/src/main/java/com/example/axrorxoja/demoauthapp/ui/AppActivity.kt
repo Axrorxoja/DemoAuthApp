@@ -6,10 +6,7 @@ import android.support.v4.app.FragmentTransaction
 import com.example.axrorxoja.demoauthapp.R
 import com.example.axrorxoja.demoauthapp.extension.transAction
 import com.example.axrorxoja.demoauthapp.presentation.IViewActivity
-import com.example.axrorxoja.demoauthapp.ui.fragments.MainFragment
-import com.example.axrorxoja.demoauthapp.ui.fragments.ResetFragment
-import com.example.axrorxoja.demoauthapp.ui.fragments.SignInFragment
-import com.example.axrorxoja.demoauthapp.ui.fragments.SignUpFragment
+import com.example.axrorxoja.demoauthapp.ui.fragments.*
 import com.example.axrorxoja.demoauthapp.ui.global.BaseFragment
 import dagger.android.support.DaggerAppCompatActivity
 
@@ -21,7 +18,7 @@ class AppActivity :
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_app)
 
-        if (savedInstanceState != null) onSignIn()
+        if (savedInstanceState == null) onSignIn()
     }
 
     override fun onSignIn() = supportFragmentManager.transAction({ add(this, SignInFragment()) })
@@ -32,7 +29,7 @@ class AppActivity :
 
     override fun onReset() = supportFragmentManager.transAction({ add(this, ResetFragment()) })
 
-    override fun onForgot() = supportFragmentManager.transAction({ add(this, SignUpFragment()) })
+    override fun onForgot() = supportFragmentManager.transAction({ add(this, ForgotFragment()) })
 
     override fun exitToRoot() =
         supportFragmentManager.popBackStack(
@@ -47,9 +44,10 @@ class AppActivity :
     private fun replace(ft: FragmentTransaction, fr: BaseFragment) = ft.add(R.id.container, fr, fr.fragmentTag)
 
     override fun onBackPressed() {
-        super.onBackPressed()
         if (supportFragmentManager.backStackEntryCount == 1) {
             finish()
+        } else {
+            super.onBackPressed()
         }
     }
 

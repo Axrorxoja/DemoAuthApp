@@ -21,5 +21,5 @@ abstract class ActivityModule {
     @Binds
     @IntoMap
     @ActivityKey(AppActivity::class)
-    abstract fun bindLoginActivity(builder: AppActivitySubComponent.Builder): AndroidInjector.Factory<out Activity>
+    abstract fun bindActivity(builder: AppActivitySubComponent.Builder): AndroidInjector.Factory<out Activity>
 }

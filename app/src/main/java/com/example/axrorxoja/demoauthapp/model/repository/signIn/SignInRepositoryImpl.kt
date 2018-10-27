@@ -16,10 +16,10 @@ import kotlinx.coroutines.experimental.launch
 * Created by axrorxoja on 10/2/18
 */
 class SignInRepositoryImpl(private val service: ApiService) :
-    BaseRepositoryImpl<BaseData<SignInResponse>>(),
+    BaseRepositoryImpl<SignInResponse>(),
     ISignInRepository {
 
-    override val liveData: SingleLiveEvent<BaseData<SignInResponse>> by lazy { SingleLiveEvent<BaseData<SignInResponse>>() }
+    override val liveData by lazy { SingleLiveEvent<BaseData<SignInResponse>>() }
     override var job: Job? = null
 
     override fun signIn(request: SignInRequest): LiveData<BaseData<SignInResponse>> {

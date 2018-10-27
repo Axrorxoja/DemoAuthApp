@@ -7,7 +7,7 @@ import com.example.axrorxoja.demoauthapp.entity.BaseData
 
 abstract class BasePresenter<T>(private val view: IViewBase) {
 
-    fun findAppropriateError(error: ErrorObject?): Int {
+    private fun findAppropriateError(error: ErrorObject?): Int {
         return if (error != null) {
             when (error.code) {
                 ErrorCodes.EMPTY_DATA -> R.string.data_is_empty
@@ -28,7 +28,7 @@ abstract class BasePresenter<T>(private val view: IViewBase) {
         view.onSuccess()
     }
 
-    fun checkData(data: BaseData<T>?) {
+    protected fun checkData(data: BaseData<T>?) {
         if (data != null) {
             if (data.success != null) {
                 onSuccess(data.success)

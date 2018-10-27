@@ -32,9 +32,9 @@
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/tie_login"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/login" />
+            style="@style/AppTheme.EditText_Name_Next"
+            android:hint="@string/login"
+            android:nextFocusForward="@id/ti_password" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
@@ -45,12 +45,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:passwordToggleEnabled="true">
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/tie_password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/AppTheme.EditText_Number_Done"
             android:hint="@string/password" />
     </android.support.design.widget.TextInputLayout>
 

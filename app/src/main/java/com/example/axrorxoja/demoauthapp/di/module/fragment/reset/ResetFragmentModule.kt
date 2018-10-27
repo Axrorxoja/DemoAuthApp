@@ -1,6 +1,5 @@
 package com.example.axrorxoja.demoauthapp.di.module.fragment.reset
 
-import com.example.axrorxoja.demoauthapp.di.scope.forgot.ForgotFragmentScope
 import com.example.axrorxoja.demoauthapp.di.scope.reset.ResetFragmentScope
 import com.example.axrorxoja.demoauthapp.model.repository.ApiService
 import com.example.axrorxoja.demoauthapp.model.repository.reset.IResetRepository
@@ -25,11 +24,11 @@ class ResetFragmentModule {
     fun provideRepository(service: ApiService): IResetRepository = ResetRepositoryImpl(service)
 
     @Provides
-    @ForgotFragmentScope
+    @ResetFragmentScope
     fun provideView(fragment: ResetFragment): IViewReset = fragment
 
     @Provides
-    @ForgotFragmentScope
+    @ResetFragmentScope
     fun providePresenter(
         repo: IResetRepository,
         pref: IPreference,
