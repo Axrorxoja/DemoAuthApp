@@ -50,7 +50,6 @@ class AppActivity :
             .addToBackStack(fr.fragmentTag)
     }
 
-
     private fun replace(ft: FragmentTransaction, fr: BaseFragment) =
         ft.replace(R.id.container, fr, fr.fragmentTag)
             .addToBackStack(fr.fragmentTag)

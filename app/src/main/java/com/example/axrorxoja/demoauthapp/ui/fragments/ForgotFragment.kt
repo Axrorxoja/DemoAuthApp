@@ -24,6 +24,7 @@ class ForgotFragment : BaseDaggerFragment(),
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         btn_forgot.setOnClickListener { onForgot() }
+        ti_login.setOnEditorActionListener { _, actionId, _ -> onAction(actionId, this::onForgot) }
     }
 
     private fun onForgot() {

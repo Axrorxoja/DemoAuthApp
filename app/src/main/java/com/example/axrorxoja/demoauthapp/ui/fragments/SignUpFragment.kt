@@ -23,6 +23,7 @@ class SignUpFragment : BaseDaggerFragment(),
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         btn_save.setOnClickListener { onSaveUser() }
+        ti_pass_again.setOnEditorActionListener { _, actionId, _ -> onAction(actionId, this::onSaveUser) }
     }
 
     private fun onSaveUser() {

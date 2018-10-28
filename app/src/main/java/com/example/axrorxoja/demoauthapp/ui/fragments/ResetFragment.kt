@@ -3,7 +3,6 @@ package com.example.axrorxoja.demoauthapp.ui.fragments
 
 import android.arch.lifecycle.LifecycleOwner
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.view.View
 import com.example.axrorxoja.demoauthapp.R
 import com.example.axrorxoja.demoauthapp.extension.changeVisibility
@@ -25,6 +24,7 @@ class ResetFragment : BaseDaggerFragment(),
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         btn_reset.setOnClickListener { onReset() }
+        ti_pass_again.setOnEditorActionListener { _, actionId, _ -> onAction(actionId, this::onReset) }
     }
 
     private fun onReset() {

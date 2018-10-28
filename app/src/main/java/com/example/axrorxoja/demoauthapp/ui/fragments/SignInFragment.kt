@@ -25,9 +25,11 @@ class SignInFragment : BaseDaggerFragment(),
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         btn_enter.setOnClickListener { onSignIn() }
         tv_sign_up.setOnClickListener { activityView.onSignUp() }
         tv_forgot.setOnClickListener { activityView.onForgot() }
+        tie_password.setOnEditorActionListener { _, actionId, _ -> onAction(actionId, this::onSignIn) }
     }
 
     private fun onSignIn() {
