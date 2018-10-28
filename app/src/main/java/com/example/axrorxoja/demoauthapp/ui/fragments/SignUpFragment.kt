@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import com.example.axrorxoja.demoauthapp.R
 import com.example.axrorxoja.demoauthapp.extension.changeVisibility
+import com.example.axrorxoja.demoauthapp.extension.hideKeyboard
 import com.example.axrorxoja.demoauthapp.extension.showSnackbar
 import com.example.axrorxoja.demoauthapp.extension.text
 import com.example.axrorxoja.demoauthapp.presentation.IViewActivity
@@ -27,6 +28,7 @@ class SignUpFragment : BaseDaggerFragment(),
     }
 
     private fun onSaveUser() {
+        btn_save.hideKeyboard()
         btn_save.isEnabled = false
         presenter.signUp(
             ti_first_name.text(),

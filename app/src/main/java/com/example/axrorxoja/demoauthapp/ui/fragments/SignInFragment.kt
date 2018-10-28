@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import com.example.axrorxoja.demoauthapp.R
 import com.example.axrorxoja.demoauthapp.extension.changeVisibility
+import com.example.axrorxoja.demoauthapp.extension.hideKeyboard
 import com.example.axrorxoja.demoauthapp.extension.showSnackbar
 import com.example.axrorxoja.demoauthapp.extension.text
 import com.example.axrorxoja.demoauthapp.presentation.IViewActivity
@@ -33,6 +34,7 @@ class SignInFragment : BaseDaggerFragment(),
     }
 
     private fun onSignIn() {
+        btn_enter.hideKeyboard()
         btn_enter.isEnabled = false
         presenter.signIn(tie_login.text(), tie_password.text())
     }

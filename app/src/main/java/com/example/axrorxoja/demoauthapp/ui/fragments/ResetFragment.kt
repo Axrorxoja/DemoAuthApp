@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import com.example.axrorxoja.demoauthapp.R
 import com.example.axrorxoja.demoauthapp.extension.changeVisibility
+import com.example.axrorxoja.demoauthapp.extension.hideKeyboard
 import com.example.axrorxoja.demoauthapp.extension.showSnackbar
 import com.example.axrorxoja.demoauthapp.extension.text
 import com.example.axrorxoja.demoauthapp.presentation.IViewActivity
@@ -28,6 +29,7 @@ class ResetFragment : BaseDaggerFragment(),
     }
 
     private fun onReset() {
+        btn_reset.hideKeyboard()
         btn_reset.isEnabled = false
         presenter.reset(ti_pass.text(), ti_pass_again.text())
     }

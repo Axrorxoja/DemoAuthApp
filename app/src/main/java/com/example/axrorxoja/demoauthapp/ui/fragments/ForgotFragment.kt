@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import com.example.axrorxoja.demoauthapp.R
 import com.example.axrorxoja.demoauthapp.extension.changeVisibility
+import com.example.axrorxoja.demoauthapp.extension.hideKeyboard
 import com.example.axrorxoja.demoauthapp.extension.showSnackbar
 import com.example.axrorxoja.demoauthapp.extension.text
 import com.example.axrorxoja.demoauthapp.presentation.IViewActivity
@@ -28,6 +29,7 @@ class ForgotFragment : BaseDaggerFragment(),
     }
 
     private fun onForgot() {
+        btn_forgot.hideKeyboard()
         btn_forgot.isEnabled = false
         presenter.forgot(
             ti_first_name.text(),

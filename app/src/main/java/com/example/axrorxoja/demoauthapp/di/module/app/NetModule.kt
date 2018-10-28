@@ -4,12 +4,10 @@ import com.example.axrorxoja.demoauthapp.App
 import com.example.axrorxoja.demoauthapp.common.API_URL
 import com.example.axrorxoja.demoauthapp.di.scope.AppScope
 import com.example.axrorxoja.demoauthapp.model.repository.ApiService
-import com.readystatesoftware.chuck.ChuckInterceptor
 import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
 import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
@@ -28,8 +26,8 @@ class NetModule {
     @Provides
     fun provideHttpClient(context: App): OkHttpClient {
         return OkHttpClient.Builder()
-            .addInterceptor(ChuckInterceptor(context))
-            .addInterceptor(HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BASIC })
+//            .addInterceptor(ChuckInterceptor(context))
+//            .addInterceptor(HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BASIC })
             .build()
     }
 
